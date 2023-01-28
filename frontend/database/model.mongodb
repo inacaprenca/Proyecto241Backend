@@ -8,15 +8,16 @@ use('sistema');
 
 // The drop() command destroys all data from a collection.
 // Make sure you run it against the correct database and collection.
-db.producto.drop();
+db.products.drop();
+db.categories.drop();
 
 // Insert a few documents into the sales collection.
-const productos = [
+const products = [
   { 
     '_id': 1, 'uuid': ObjectId(),'title': 'Témpera Artel 8 Colores', 'price': 10, 'quantity': 2, 'image':'1.png','date': new Date('2014-03-01T08:00:00Z'),
     'category': 'Cocina', 'description': 'Témpera Artel', 'rating': 4.5, 'reviews': 10
   },
-  { '_id': 2, 'uuid': ObjectId(), 'title': 'Croquera 16 x 21 cm', 'description':'Descripcion del producto. Croquera ', 'price': 20, 'quantity': 1, 'image':'2.png', 'date': new Date('2014-03-01T09:00:00Z') },
+  { '_id': 2, 'uuid': ObjectId(), 'category':'Papelería Gráfica', 'title': 'Croquera 16 x 21 cm', 'description':'Descripcion del producto. Croquera ', 'price': 20, 'quantity': 1, 'image':'2.png', 'date': new Date('2014-03-01T09:00:00Z') },
   { '_id': 3, 'uuid': ObjectId(), 'title': 'Cinta 500 Transparente Pack 3 Rollos', 'description':'Descripcion del producto. CINTA ', 'price': 5, 'quantity': 10, 'image':'3.png', 'date': new Date('2014-03-15T09:00:00Z') },
   { '_id': 4, 'uuid': ObjectId(), 'title': 'Pistola de Juguete Nerf Naranjo', 'description':'Descripcion del producto. Nerf ', 'price': 5, 'quantity':  20, 'image':'4.png', 'date': new Date('2014-04-04T11:21:39.736Z') },
   { '_id': 5, 'uuid': ObjectId(), 'title': 'Veneno para ratas Anasac Control', 'description':'Descripcion del producto. Control ', 'price': 10, 'quantity': 10, 'image':'5.png', 'date': new Date('2014-04-04T21:23:13.331Z') },
@@ -57,7 +58,52 @@ const productos = [
   { '_id': 40, 'uuid': ObjectId(), 'title': 'Producto 13', 'price': 10, 'quantity': 3, 'image':'40.png', 'date': new Date('2016-02-06T20:20:13Z') },
  
 ];
-db.producto.insertMany(productos);
+const categories = [
+  { '_id': 09, 'uuid': ObjectId(), 'title': 'TIENDA STOCK', 'image':'Icono-GYG_TEXTIL_PUBLICITARIOS.png', "items" : {  
+    'subcat' : [ 
+      { subcat_id: 1 , 'title' : 'Completos ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 2 , 'title' : 'Italiano ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 3 , 'title' : 'Hamburguesas ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 4 , 'title' : 'Churrascos ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 5 , 'title' : 'Papas Fritas ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 6 , 'title' : 'Salchipapas ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 7 , 'title' : 'Hand Rolls ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 8 , 'title' : 'Sushi ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 9 , 'title' : 'Fajitas ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 10 , 'title' : 'Sándwich ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 11 , 'title' : 'Pollo asado ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 12 , 'title' : 'Pollo a la broster ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 13 , 'title' : 'Sopaipillas ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 14 , 'title' : 'Anticuchos ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 15 , 'title' : 'Brochetas ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 16 , 'title' : 'Humitas ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 17 , 'title' : 'Arepas ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 18 , 'title' : 'Pizza ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 19 , 'title' : 'Churros ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 20 , 'title' : 'Cabritas ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 21 , 'title' : 'Colaciones ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 22 , 'title' : 'Almuerzos ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 23 , 'title' : 'Perros calientes ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 24 , 'title' : 'Choripán ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+      { subcat_id: 25 , 'title' : 'Ceviche ', 'image' : 'Icono-GYG_TEXTIL_PUBLICITARIOS.png' },
+    ]
+  
+   }},
+  { '_id': 10, 'uuid': ObjectId(), 'title': 'GIGANTOGRAFIAS Y MONUMENTALES', 'image':'Icono-GYG_PENDONES_Y_GIGANTOGRAFIA.png'},
+  { '_id': 11, 'uuid': ObjectId(), 'title': 'LIENZOS Y PENDONES', 'image':'Icono-GYG_PAPELERIA_GRAFICA.png' },
+  { '_id': 12, 'uuid': ObjectId(), 'title': 'ETIQUETAS Y ESTICKERS', 'image':'Icono-GYG_PAPELERIA_GRAFICA.png' },
+  { '_id': 13, 'uuid': ObjectId(), 'title': 'PAPELERÍA GRÁFICA', 'image':'Icono-GYG_PAPELERIA_GRAFICA.png' },
+  { '_id': 14, 'uuid': ObjectId(), 'title': 'BRANDING', 'image':'Icono-GYG_PAPELERIA_GRAFICA.png' },
+  { '_id': 15, 'uuid': ObjectId(), 'title': 'IMPRESIÓN DIGITAL', 'image':'Icono-GYG_PAPELERIA_GRAFICA.png' },
+  { '_id': 16, 'uuid': ObjectId(), 'title': 'REGALOS COORPORATIVOS', 'image':'Icono-GYG_PAPELERIA_GRAFICA.png' },
+  { '_id': 17, 'uuid': ObjectId(), 'title': 'TEXTIL PUBLICITARIOS', 'image':'Icono-GYG_PAPELERIA_GRAFICA.png' },
+  { '_id': 18, 'uuid': ObjectId(), 'title': 'FANTASÍA PUBLICITARÍA Y VOLUMÉTRICA', 'image':'Icono-GYG_PAPELERIA_GRAFICA.png' },
+
+
+
+];
+db.products.insertMany(products);
+db.categories.insertMany(categories)
 
 // Run a find command to view items sold on April 4th, 2014.
 db.producto.find({ date: { $gte: new Date('2014-04-04'), $lt: new Date('2014-04-05') } });

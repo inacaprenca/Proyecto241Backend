@@ -1,5 +1,7 @@
+
 .App {
   text-align: center;
+  font-family: 'Montserrat', Verdana;  /* Montserrat is a Google Font */
 }
 
 .App-logo {

@@ -6,7 +6,7 @@
 # pylint: disable=import-error
 import os
 import motor.motor_asyncio
-from model import Producto
+from model import Producto, Categories
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -21,10 +21,16 @@ async def fetch_one_producto(title):
 
 async def fetch_all_productos():
     todos = []
-    cursor = collection.find({})
+    cursor = collection.find().limit(6)
     async for document in cursor:
         todos.append(Producto(**document))
     return todos
+async def fetch_all_categories():
+    categories = []
+    cursor = database.categories.find({})
+    async for document in cursor:
+        categories.append(Categories(**document))
+    return categories
 
 async def create_todo(todo):
     document = todo

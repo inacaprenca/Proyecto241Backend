@@ -28,7 +28,7 @@ conda activate py311
 Una vez activado el entorno, debemos instalar los siguientes packages: 
 
 ```bash
-conda install fastapi motor pydantic uvicorn python-dotenv --channel conda-forge
+conda install fastapi motor pydantic uvicorn python-dotenv python-jose passlib --channel conda-forge
 ```
 # Cargando Datos en Mongo DB. 
 Una vez que se ha realizado la conexión con mongodb desde las extensiones de VSCode, debes abrir el archivo que se encuentra en frontend/database/model.mongodb

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Layout } from 'antd';
-import { Col, Row, Space, Badge } from 'antd';
+import { Col, Row, Space, Badge, Layout } from 'antd';
 import Login from '../Login';
 import Cart from '../Cart';
 import styles from './styles'
@@ -13,7 +12,12 @@ const App = () => {
       //const dispatch = useDispatch()
       return (
             <Header style={styles}>
-                  <Row>
+                  <Row className='terminos'>
+                        <Col xs={2} sm={4} md={6} lg={8} xl={10}>
+                              TERMINOS Y CONDICIONES | PREGUNTAS FRECUENTES | SIGUE TU PEDIDO
+                        </Col>
+                  </Row>
+                  <Row className='menu'>
                         <Col xs={2} sm={4} md={6} lg={8} xl={10}>
                               <div className="img-wrapper">
                                     <img className="img-wrapper-img" alt="imagen" description="" width="80%" src='assets/logo.png' />
@@ -25,12 +29,19 @@ const App = () => {
                         <Col xs={2} sm={4} md={6} lg={8} xl={10}>
                               <Space>
                                     <Login />
-                                    <Badge count={ count } showZero>
+                                    <Badge count={count} showZero>
                                           <Cart />
                                     </Badge>
                               </Space>
                         </Col>
                   </Row>
+                  <Row className='promo'>
+                        <Col xs={2} sm={4} md={6} lg={8} xl={10}>
+                              PROMO
+                        </Col>
+                  </Row>
+
+
             </Header>
 
       );

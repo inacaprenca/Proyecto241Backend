@@ -1,0 +1,42 @@
+.btn-menu{
+    padding: 0.5em;
+}
+
+.btn-menu-circle{
+    background-color: #E031DC;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+  .btn-menu-circle:hover{
+    background-color: #FFFFFF;
+    color: #080056;
+  }
+  .pnl-menu{
+    position: fixed;
+    z-index: 1;
+    left: 1px;
+  }
+  .menu-icon{
+    width: 50px;
+  }
+  .menu-icon-add:hover{
+    color: #5a09f0;
+  }
+  .menu-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 0.5em;
+    border-bottom: 1px solid #E031DC;
+  }
+  .menu-item:hover{
+    background-color: #E031DC;
+    color: #FFFFFF;
+  }

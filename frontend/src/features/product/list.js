@@ -32,11 +32,9 @@ export const ProductList = () => {
         console.log("MODAL", item)
     }
     if (isLoading) return <ProductSkeleton loading={isLoading} />
-    if (!data) return <div>Missing post!</div>
+    if (!data) return <div>Ooops! Data not found</div>
     return (
         <div className="card-wrapper">
-            <Input placeholder="EL NOMBRE DE TU EMPRESA" onChange={handleInput} />
-            <CarouselComp data={texto}/>
             <Product show={modalProduct} close={()=>ToogleModal()} items={item} />
             <Row key={uuid()} gutter={[24, 16]} className="card-row">
 

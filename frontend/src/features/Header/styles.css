@@ -1,7 +1,22 @@
 .img-wrapper {
-    width: 100%;
-  }
-  
-.img-wrapper-img{
-    width: 30%;
-  }
+  width: 100%;
+}
+
+.img-wrapper-img {
+  width: 30%;
+}
+
+.terminos {
+  background-color: #FFFFFF;
+}
+
+.menu {
+
+  background-color: #080056;
+
+}
+
+.promo {
+  background-color: #E031DC;
+
+}

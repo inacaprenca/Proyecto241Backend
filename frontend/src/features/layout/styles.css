@@ -1,8 +1,99 @@
 .header{
-    background-color: rgb(240, 168, 168);
-    color: #fff;
-    padding: 10px;
+    background-color: #E6E6E6;
+}
+.content{
+    min-height: 1vh;
+    min-height: 10vh;
+}
+.footer{
+    background-color: #080056;
+    color: #f1f1f1;
+}
+.footer-1{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    color : #FFFFFF;
+}
+.footer-descripcion{
+    flex: 50%;
+    padding: 5vh;
+}
+.footer-rrss footer{
+    flex: 50%;
+}
+.footer-direccion{
+    background-color: #FFFFFF;
+    color: #080056;
+}
+
+.terminos {
+    background-color: #FFFFFF;
+    padding: 0vh;
+    font-size: xx-small;
+  }
+.menu { 
+    background-color: #080056;
+    color: #f1f1f1; 
+    padding: 2vh;
+  }
+.promo {
+    background-color: #E031DC;
+    font-size: large;
+    padding: 2vh;
+  }
+
+  .logo {
+    max-width: 180px;
+    max-height: 60px;
+    flex-wrap: wrap;
+  }
+
+  .icono-carrito {
+    max-width: 30px;
+    max-height: 30px;
+    flex-wrap: wrap;
+    font-size: xx-large;
+    border-left: 1px solid #fefeff;
+    padding-left: 1em;
+  }	
+
+  .icono-user {
+    max-width: 30px;
+    max-height: 30px;
+    flex-wrap: wrap;
+    font-size: xx-large;
+    border-left: 1px solid #fefeff;
+    padding-left: 1em;
+  }	
+  .icono-documento {
+    max-width: 30px;
+    max-height: 30px;
+    flex-wrap: wrap;
+    font-size: xx-large;
+    border-left: 1px solid #fefeff;
+    padding-left: 1em;
+  }	
+
+/* headlines with lines */
+.decorated{
+  overflow: hidden;
+  text-align: center;
+  font-size: x-large;
+}
+.decorated > span{
+ position: relative;
+ display: inline-block;
+}
+.decorated > span:before, .decorated > span:after{
+ content: '';
+ position: absolute;
+ top: 50%;
+ border-bottom: 2px solid;
+ width: 100vw;
+ margin: 0 20px;
+}
+.decorated > span:before{
+ right: 100%;
+}
+.decorated > span:after{
+ left: 100%;
 }
